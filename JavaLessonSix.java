@@ -1,9 +1,35 @@
+import java.util.*;
+
 public class JavaLessonSix{
+	
+	static Scanner userInput = new Scanner(System.in);                               
+	
 	public static void main(String[] Args){
-		divideByZero(2);
+		//divideByZero(2);
+		System.out.println("How old are you? ");
+		int age = checkValidAge();
+		
+		if(age != 0){
+		System.out.println("You are "+age+" years old");
+		}
 	}
 	
-	public static void divideByZero(int a){
+	public static int checkValidAge(){
+		
+		try{
+			return userInput.nextInt();
+		}
+		
+		catch(InputMismatchException e){
+			userInput.next();
+			System.out.print("That isn't a whole number");
+			return 0;
+		
+		}
+		
+	}
+	
+	/*public static void divideByZero(int a){
 		try{
 			System.out.println(a/0);
 		}
@@ -16,5 +42,5 @@ public class JavaLessonSix{
 			
 			e.printStackTrace();
 		}
-	}
+	}*/
 }

@@ -1,4 +1,5 @@
 import java.util.*;
+import java.io.*;
 
 public class JavaLessonSix{
 	
@@ -6,15 +7,36 @@ public class JavaLessonSix{
 	
 	public static void main(String[] Args){
 		//divideByZero(2);
-		System.out.println("How old are you? ");
+		/*System.out.println("How old are you? ");
 		int age = checkValidAge();
 		
 		if(age != 0){
 		System.out.println("You are "+age+" years old");
+		}*/
+		
+		getAFile("./somestuff.txt");
+	}
+	
+	
+	public static void getAFile(String fileName){
+		try{
+			FileInputStream file = new FileInputStream(fileName);
+		}
+		catch(FileNotFoundException e){
+			System.out.println("Sorry can't find that file");
+		}
+		catch(IOException e){
+			System.out.println("Unknown IO Error");
+		}
+		catch(Exception e){
+			System.out.println("Some error occured");
+		}
+		finally{
+			System.out.println("");
 		}
 	}
 	
-	public static int checkValidAge(){
+	/*public static int checkValidAge(){
 		
 		try{
 			return userInput.nextInt();
@@ -27,7 +49,7 @@ public class JavaLessonSix{
 		
 		}
 		
-	}
+	}*/
 	
 	/*public static void divideByZero(int a){
 		try{

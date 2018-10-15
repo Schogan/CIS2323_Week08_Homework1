@@ -13,12 +13,22 @@ public class JavaLessonSix{
 		if(age != 0){
 		System.out.println("You are "+age+" years old");
 		}*/
-		
+		try{
 		getAFile("./somestuff.txt");
+		}
+		catch(IOException e){
+			System.out.println("IO Error occured");
+		}
+		
+	}
+	
+	public static void getAFile(String fileName)throws IOException,  FileNotFoundException{
+		FileInputStream file = new FileInputStream(fileName);
+		
 	}
 	
 	
-	public static void getAFile(String fileName){
+	/*public static void getAFile(String fileName){
 		try{
 			FileInputStream file = new FileInputStream(fileName);
 		}
@@ -34,7 +44,7 @@ public class JavaLessonSix{
 		finally{
 			System.out.println("");
 		}
-	}
+	}*/
 	
 	/*public static int checkValidAge(){
 		
